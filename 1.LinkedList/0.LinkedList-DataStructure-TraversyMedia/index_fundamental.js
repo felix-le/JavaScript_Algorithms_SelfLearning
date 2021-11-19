@@ -81,7 +81,21 @@ class LinkedList {
     }
     return null;
   }
+  // find node
+  findNode(data) {
+    let current = this.head;
+    let index = -1;
 
+    while (current) {
+      index++;
+      if (current.data == data) {
+        console.log('the index of data is ', index);
+        return index;
+      }
+      current = current.next;
+    }
+    return -1;
+  }
   // remove at index
   removeAt(index) {
     // if index is out of range
@@ -127,12 +141,17 @@ class LinkedList {
 
 const ll = new LinkedList();
 
-ll.insertFirst(100);
-ll.insertFirst(200);
-ll.insertFirst(300);
+ll.insertFirst(20);
+ll.insertFirst(4);
+ll.insertFirst(15);
+ll.insertFirst(10);
 
+// ll.insertLast(300);
+// ll.printListData();
+console.log(ll);
+// ll.findNode(300);
 // ll.insertLast(400);
 // ll.insertAt(500, 10);
 // ll.removeAt(0);
-ll.clearList();
-ll.printListData();
+// ll.clearList();
+// ll.printListData();
